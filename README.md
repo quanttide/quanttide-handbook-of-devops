@@ -1,2 +1,1 @@
-# quanttide-handbook-of-devops
-量潮DevOps手册
+# 量潮DevOps规范
