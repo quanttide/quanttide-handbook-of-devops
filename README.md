@@ -1,1 +1,1 @@
-# 量潮DevOps规范
+# 量潮DevOps手册
