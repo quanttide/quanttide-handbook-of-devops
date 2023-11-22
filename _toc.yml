@@ -1,0 +1,5 @@
+format: jb-book
+root: index.md
+chapters:
+  - file: ci/README.md
+  - file: testing/README.md
