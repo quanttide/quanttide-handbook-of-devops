@@ -1,6 +1,9 @@
 format: jb-book
 root: index.md
 chapters:
+  - file: init/README.md
+    sections:
+      - file: init/repo_naming.md
   - file: planning/README.md
   - file: coding/README.md
   - file: building/README.md
