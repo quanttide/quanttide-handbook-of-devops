@@ -9,6 +9,13 @@ chapters:
   - file: building/README.md
   - file: testing/README.md
   - file: releasing/README.md
+    sections:
+      - file: releasing/semvar/README.md
+        sections:
+          - file: releasing/semvar/general.md
+          - file: releasing/semvar/private_versions.md
+          - file: releasing/semvar/prerelease_versions.md
+          - file: releasing/semvar/tools.md
   - file: deploying/README.md
   - file: operating/README.md
   - file: monitoring/README.md
