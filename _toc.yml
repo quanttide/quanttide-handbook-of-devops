@@ -1,21 +1,29 @@
 format: jb-book
 root: index.md
-chapters:
-  - file: init/README.md
-    sections:
-      - file: init/repo_naming.md
-  - file: planning/README.md
-  - file: coding/README.md
-  - file: building/README.md
-  - file: testing/README.md
-  - file: releasing/README.md
-    sections:
-      - file: releasing/semvar/README.md
+parts:
+  - caption: 基础
+    chapters:
+      - file: general/README.md
         sections:
-          - file: releasing/semvar/general.md
-          - file: releasing/semvar/private_versions.md
-          - file: releasing/semvar/prerelease_versions.md
-          - file: releasing/semvar/tools.md
-  - file: deploying/README.md
-  - file: operating/README.md
-  - file: monitoring/README.md
+          - file: general/repo_naming.md
+          - file: general/git_workflow.md
+  - caption: 工具
+    chapters:
+      - file: git/README.md
+  - caption: 流程
+    chapters: 
+      - file: planning/README.md
+      - file: coding/README.md
+      - file: building/README.md
+      - file: testing/README.md
+      - file: releasing/README.md
+        sections:
+          - file: releasing/semvar/README.md
+            sections:
+              - file: releasing/semvar/general.md
+              - file: releasing/semvar/private_versions.md
+              - file: releasing/semvar/prerelease_versions.md
+              - file: releasing/semvar/tools.md
+      - file: deploying/README.md
+      - file: operating/README.md
+      - file: monitoring/README.md
