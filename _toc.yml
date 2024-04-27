@@ -10,6 +10,8 @@ parts:
   - caption: 工具
     chapters:
       - file: git/README.md
+        sections:
+          - file: git/global_proxy.md
   - caption: 流程
     chapters: 
       - file: planning/README.md
