@@ -18,9 +18,6 @@ project:
     - title: 契约
       children:
         - file: contract/scope.md
-    - title: 工具
-      children:
-        - file: git/README.md
     - title: 生命周期
       children:
         - file: lifecycle/index.md
