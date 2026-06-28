@@ -1,0 +1,40 @@
+version: 1
+project:
+  title: 量潮DevOps手册
+  description: 量潮科技 DevOps 实践手册
+  keywords: [devops, handbook, best-practices]
+  authors:
+    - name: 量潮科技
+      email: opensource@quanttide.com
+  github: https://github.com/quanttide/quanttide-handbook-of-devops
+  source: https://github.com/quanttide/quanttide-handbook-of-devops/tree/main
+  toc:
+    - file: index.md
+    - title: 基础
+      children:
+        - file: general/README.md
+        - file: general/repo_naming.md
+        - file: general/git_workflow.md
+    - title: 工具
+      children:
+        - file: git/README.md
+    - title: 流程
+      children:
+        - file: planning/README.md
+        - file: coding/README.md
+        - file: building/README.md
+        - file: testing/README.md
+        - file: releasing/README.md
+          children:
+            - file: releasing/semvar/README.md
+              children:
+                - file: releasing/semvar/general.md
+                - file: releasing/semvar/private_versions.md
+                - file: releasing/semvar/prerelease_versions.md
+                - file: releasing/semvar/tools.md
+        - file: deploying/README.md
+        - file: operating/README.md
+        - file: monitoring/README.md
+
+site:
+  template: book-theme
