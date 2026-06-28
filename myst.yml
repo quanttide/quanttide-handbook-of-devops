@@ -10,9 +10,6 @@ project:
   source: https://github.com/quanttide/quanttide-handbook-of-devops/tree/main
   toc:
     - file: index.md
-    - title: 基础
-      children:
-        - file: general/README.md
     - title: 契约
       children:
         - file: contract/scope.md
