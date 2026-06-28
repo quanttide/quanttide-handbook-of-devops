@@ -21,14 +21,14 @@ project:
     - title: 生命周期
       children:
         - file: lifecycle/index.md
-        - file: lifecycle/planning.md
-        - file: lifecycle/coding.md
-        - file: lifecycle/building.md
-        - file: lifecycle/testing.md
+        - file: lifecycle/plan.md
+        - file: lifecycle/code.md
+        - file: lifecycle/build.md
+        - file: lifecycle/test.md
         - file: lifecycle/release.md
-        - file: lifecycle/deploying.md
-        - file: lifecycle/operating.md
-        - file: lifecycle/monitoring.md
+        - file: lifecycle/deploy.md
+        - file: lifecycle/operate.md
+        - file: lifecycle/monitor.md
 
 site:
   template: book-theme
