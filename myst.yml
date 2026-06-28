@@ -29,7 +29,7 @@ project:
         - file: monitoring/README.md
     - title: 生命周期
       children:
-        - file: lifecycle/README.md
+        - file: lifecycle/index.md
         - file: lifecycle/release.md
 
 site:
