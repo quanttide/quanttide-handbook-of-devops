@@ -21,15 +21,6 @@ project:
     - title: 工具
       children:
         - file: git/README.md
-    - title: 流程
-      children:
-        - file: planning/README.md
-        - file: coding/README.md
-        - file: building/README.md
-        - file: testing/README.md
-        - file: deploying/README.md
-        - file: operating/README.md
-        - file: monitoring/README.md
     - title: 生命周期
       children:
         - file: lifecycle/index.md
