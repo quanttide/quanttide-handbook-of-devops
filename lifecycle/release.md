@@ -1,10 +1,8 @@
 # 发布管理
 
-`qtcloud-devops` 是量潮 DevOps 命令行工具，提供发布管理和组件同步功能。
+使用 `release` 命令管理版本发布。每次操作开始和结束执行一次 `release status`，确认操作结果。
 
 ## 检查发布前状态
-
-查看当前项目的发布状态：
 
 ```bash
 qtcloud-devops release status
@@ -26,6 +24,5 @@ qtcloud-devops release publish -v cli/v0.6.1 -y
 ## 检查发布后状态
 
 ```bash
-# 查看发布后状态
-qtcloud-devops code status
+qtcloud-devops release status
 ```
