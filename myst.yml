@@ -15,6 +15,7 @@ project:
         - file: general/README.md
         - file: general/repo_naming.md
         - file: general/git_workflow.md
+        - file: contract/scope.md
     - title: 工具
       children:
         - file: git/README.md
