@@ -13,8 +13,6 @@ project:
     - title: 基础
       children:
         - file: general/README.md
-        - file: general/repo_naming.md
-        - file: general/git_workflow.md
     - title: 契约
       children:
         - file: contract/scope.md
