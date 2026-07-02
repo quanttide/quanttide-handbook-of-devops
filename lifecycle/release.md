@@ -2,46 +2,68 @@
 
 ## 版本
 
-以Git tag为事实源。统一使用 `v` 前缀（如 `v0.1.0`、`v1.0.0-rc.1`）。
+以 Git tag 为事实源。统一使用 `v` 前缀（如 `v0.1.0`、`v1.0.0-rc.1`）。
 
-正则表达式规则：
+版本号格式：
 
-```regex
-# 正式版本
-^refs/tags/v(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)$
-
-# 含预发布后缀
-^refs/tags/v(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-(?:alpha|beta|rc)\.(?:0|[1-9]\d*))?$
-```
+- `vX.Y.Z` — 正式版本
+- `vX.Y.Z-prerelease` — 预发布版本（如 `-rc.1`、`-alpha.2`）
+- `scope/vX.Y.Z` — 带作用域前缀（如 `cli/v0.7.0`）
+- `scope/vX.Y.Z-prerelease` — 带作用域的预发布版本
 
 ## 流程
 
-### 检查发布前状态
+### 发布前检查
 
 ```bash
+# 构建状态
+qtcloud-devops build status
+
+# 测试状态
+qtcloud-devops test status
+
+# 发布状态（最新 tag、版本一致性、CHANGELOG）
 qtcloud-devops release status
 ```
 
-输出包括最新标签、未发布提交数、CHANGELOG 状态、GitHub Release 同步情况、配置文件版本一致性。
+确认版本一致、CHANGELOG 已更新、工作区干净后，进行发布。
 
-### 发布版本
+### 预发布版本（rc）
+
+发布 rc 版本用于 CI 验证：
 
 ```bash
-qtcloud-devops release publish -v cli/v0.6.1 -y
+qtcloud-devops release publish -v cli/v0.3.2-rc.1 -y
+```
+
+CI 验证通过后，检察发布状态确认一致，再发布正式版本。
+
+### 正式发布
+
+```bash
+qtcloud-devops release publish -v cli/v0.3.2 -y
 ```
 
 发布流程：
-1. 自动更新 `Cargo.toml`/`pyproject.toml` 版本号
-2. 自动生成 CHANGELOG 条目（基于 git 提交记录，LLM 协助）
-3. 提交修改 → 创建标签 → 推送到远端 → 创建 GitHub Release
 
-### 检查发布后状态
+1. 校验版本号格式
+2. 校验所有配置文件版本号一致
+3. 自动更新 `Cargo.toml`/`pyproject.toml` 版本号
+4. 自动生成 CHANGELOG 条目（基于 git 提交记录，LLM 协助）
+5. 校验 CHANGELOG 包含对应版本记录
+6. 创建标签 → 推送到远端 → 创建 GitHub Release
+7. CI 自动发布到 crates.io / PyPI
+
+### 发布后检查
 
 ```bash
 qtcloud-devops release status
 ```
 
+确认最新标签已更新、CHANGELOG 与 GitHub Release 一致。
+
 ## 验收
 
-- 配置文件与Git tag的版本号保持一致。
-- CHANGELOG与GitHub Release存在并保持一致。
+- 配置文件与 Git tag 的版本号保持一致。
+- CHANGELOG 与 GitHub Release 存在并保持一致。
+- CI 构建全部通过。
