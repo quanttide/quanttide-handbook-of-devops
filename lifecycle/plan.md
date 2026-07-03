@@ -1,42 +1,10 @@
 # 计划
 
-## 定位
+## 规划文件
 
-`plan` 阶段承接 lifecycle 的起点：**确定要做什么、做了多少、还有什么没做**。
+ROADMAP.md 位于每个 scope 的根目录，使用 Keep a Changelog 风格 + checkbox 任务清单管理 scope 级规划。
 
-由 `qtcloud-devops plan` 命令管理 scope 级规划文件（`<scope-dir>/ROADMAP.md`），通过 AI 在工作流中持续读写维护。
-
-## 命令
-
-```bash
-# 查看当前 scope 的规划进度
-qtcloud-devops plan status
-
-# 查看指定 scope 的规划进度
-qtcloud-devops plan status <scope>
-
-# 删除 scope 中已完成的条目
-qtcloud-devops plan clean [scope]
-
-# 验证 scope 格式问题（只读，修复由 LLM 完成）
-qtcloud-devops plan doctor [scope]
-```
-
-`scope` 省略时自动检测当前目录所属 scope。
-
-## 工作流
-
-```
-plan status    → 了解当前版本还差什么
-plan doctor    → 验证 ROADMAP 格式是否合规
-plan clean     → 提交前清理已完成条目，保持 ROADMAP 整洁
-     ↓
-code / build / test / release     ← 进入后续生命周期
-```
-
-### 规划文件格式
-
-ROADMAP.md 位于每个 scope 的根目录，格式约定：
+格式约定：
 
 ```markdown
 # ROADMAP
@@ -66,7 +34,21 @@ ROADMAP.md 位于每个 scope 的根目录，格式约定：
 - `- [x] xxx` — 已完成条目
 - `- [ ] xxx` — 未完成条目
 
-### plan status 输出示例
+## 流程
+
+### 查看进度
+
+```bash
+# 查看当前 scope 的规划进度
+qtcloud-devops plan status
+
+# 查看指定 scope 的规划进度
+qtcloud-devops plan status <scope>
+```
+
+`scope` 省略时自动检测当前目录所属 scope。
+
+输出示例：
 
 ```text
 [cli] 规划进度
@@ -76,6 +58,22 @@ ROADMAP.md 位于每个 scope 的根目录，格式约定：
 ────────────────────────────────────────
   总计:  9/12 完成 (75%)
 ```
+
+### 验证格式
+
+```bash
+qtcloud-devops plan doctor [scope]
+```
+
+只读检查，修复由 LLM 完成。检出的问题包括 v 前缀、分类大小写、checkbox 格式等。
+
+### 清理条目
+
+```bash
+qtcloud-devops plan clean [scope]
+```
+
+提交前清理已完成条目，保持 ROADMAP 整洁。
 
 ## 验收
 
