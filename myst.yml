@@ -15,15 +15,15 @@ project:
         - file: contract/scope.md
     - title: 生命周期
       children:
-        - file: lifecycle/index.md
-        - file: lifecycle/plan.md
-        - file: lifecycle/code.md
-        - file: lifecycle/build.md
-        - file: lifecycle/test.md
-        - file: lifecycle/release.md
-        - file: lifecycle/deploy.md
-        - file: lifecycle/operate.md
-        - file: lifecycle/monitor.md
+        - file: stage/index.md
+        - file: stage/plan.md
+        - file: stage/code.md
+        - file: stage/build.md
+        - file: stage/test.md
+        - file: stage/release.md
+        - file: stage/deploy.md
+        - file: stage/operate.md
+        - file: stage/monitor.md
 
 site:
   template: book-theme
