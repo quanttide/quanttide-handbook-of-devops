@@ -33,7 +33,11 @@ qtcloud-devops release status
 发布 rc 版本用于 CI 验证：
 
 ```bash
+# 通过 CI 发布（默认）
 qtcloud-devops release publish -v cli/v0.3.2-rc.1 -y
+
+# 本地直接发布
+qtcloud-devops release publish -v cli/v0.3.2-rc.1 -y --local
 ```
 
 CI 验证通过后，检察发布状态确认一致，再发布正式版本。
@@ -41,10 +45,14 @@ CI 验证通过后，检察发布状态确认一致，再发布正式版本。
 ### 正式发布
 
 ```bash
+# 通过 CI 发布（默认）：创建 tag → CI build-cli → CI publish-cli
 qtcloud-devops release publish -v cli/v0.3.2 -y
+
+# 本地直接发布：本地执行 cargo publish + uv publish
+qtcloud-devops release publish -v cli/v0.3.2 -y --local
 ```
 
-发布流程：
+发布流程（`--remote` / 默认）：
 
 1. 校验版本号格式
 2. 校验所有配置文件版本号一致
@@ -53,6 +61,18 @@ qtcloud-devops release publish -v cli/v0.3.2 -y
 5. 校验 CHANGELOG 包含对应版本记录
 6. 创建标签 → 推送到远端 → 创建 GitHub Release
 7. CI 自动发布到 crates.io / PyPI
+
+发布流程（`--local`）：
+
+1. 校验版本号格式
+2. 校验所有配置文件版本号一致
+3. 自动更新 `Cargo.toml`/`pyproject.toml` 版本号
+4. 自动生成 CHANGELOG 条目（基于 git 提交记录，LLM 协助）
+5. 校验 CHANGELOG 包含对应版本记录
+6. 校验本地凭证（`CARGO_REGISTRY_TOKEN` / `UV_PUBLISH_TOKEN`）
+7. 创建标签 → 推送到远端 → 创建 GitHub Release
+8. 本地执行 `cargo publish` → crates.io
+9. 本地执行 `uv publish` → PyPI
 
 ### 发布后检查
 
