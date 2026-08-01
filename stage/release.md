@@ -45,7 +45,7 @@ CI 验证通过后，检察发布状态确认一致，再发布正式版本。
 ### 正式发布
 
 ```bash
-# 通过 CI 发布（默认）：创建 tag → CI build-cli → CI publish-cli
+# 通过 CI 发布（默认）：创建 tag → CI release-cli（构建 + 发布）
 qtcloud-devops release publish -v cli/v0.3.2 -y
 
 # 本地直接发布：本地执行 cargo publish + uv publish
@@ -61,6 +61,8 @@ qtcloud-devops release publish -v cli/v0.3.2 -y --local
 5. 校验 CHANGELOG 包含对应版本记录
 6. 创建标签 → 推送到远端 → 创建 GitHub Release
 7. CI 自动发布到 crates.io / PyPI
+
+> CI 发布使用 GitHub Actions Secrets：`CRATES_API_TOKEN`、`PYPI_API_TOKEN` 需配置在**组织（organization）或仓库（repository）层面**才可以使用。
 
 发布流程（`--local`）：
 
