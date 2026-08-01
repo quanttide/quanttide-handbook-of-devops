@@ -64,6 +64,8 @@ qtcloud-devops release publish -v cli/v0.3.2 -y --local
 
 > CI 发布使用 GitHub Actions Secrets：`CRATES_API_TOKEN`、`PYPI_API_TOKEN` 需配置在**组织（organization）或仓库（repository）层面**才可以使用。
 
+> 发布 CI（workflow `release-cli`）由推送 `cli/*` tag 触发，不依赖手动创建 GitHub Release，tag 即版本事实源。
+
 发布流程（`--local`）：
 
 1. 校验版本号格式
