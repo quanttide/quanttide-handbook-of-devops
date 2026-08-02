@@ -20,7 +20,10 @@ project:
         - file: stage/code.md
         - file: stage/build.md
         - file: stage/test.md
-        - file: stage/release.md
+        - file: stage/release/index.md
+          children:
+            - file: stage/release/publish.md
+            - file: stage/release/audit.md
         - file: stage/deploy.md
         - file: stage/operate.md
         - file: stage/monitor.md
