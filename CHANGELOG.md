@@ -3,10 +3,12 @@
 ## [Unreleased]
 
 ### Added
+- 新增 qtdocs-site OSS 部署 workflow，发布地址为 `https://docs.quanttide.com/quanttide-handbook/engineering/devops/`。
 - 新增发布审计文档，覆盖自动审计、手动审计、发布前后清单和管理员/AI 决策方法。
 - 新增发布章节索引，将发布执行与发布审计分开。
 
 ### Changed
+- 开启 MyST 目录式 URL，便于在量潮工作手册命名空间下访问。
 - 将原 `stage/release.md` 拆分为 `stage/release/publish.md` 和 `stage/release/audit.md`，按 CLI 发布与手动操作重新组织发布流程。
 
 ## [0.2.1] - 2026-07-02

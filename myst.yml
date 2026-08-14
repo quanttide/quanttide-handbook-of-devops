@@ -4,7 +4,8 @@ project:
   description: 量潮科技 DevOps 实践手册
   keywords: [devops, handbook, best-practices]
   authors:
-    - name: 量潮科技
+    - name:
+        literal: 量潮科技
       email: opensource@quanttide.com
   github: https://github.com/quanttide/quanttide-handbook-of-devops
   source: https://github.com/quanttide/quanttide-handbook-of-devops/tree/main
@@ -30,3 +31,5 @@ project:
 
 site:
   template: book-theme
+  options:
+    folders: true
