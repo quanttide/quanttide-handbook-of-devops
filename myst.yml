@@ -19,6 +19,7 @@ project:
         - file: stage/index.md
         - file: stage/plan.md
         - file: stage/code.md
+        - file: stage/git.md
         - file: stage/build.md
         - file: stage/test.md
         - file: stage/release/index.md

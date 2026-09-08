@@ -13,6 +13,31 @@
 
 发布前应确认配置文件版本、CHANGELOG 条目和目标 tag 一致。tag 一经推送即视为不可变锚点，不应通过移动 tag 修复普通发布问题。
 
+## CHANGELOG 规范
+
+- Markdown 格式，每个版本独立章节，日期标注 `YYYY-MM-DD`
+- 分类标签：Added、Changed、Fixed、Removed；条目动词开头（新增 / 修改 / 修复 / 移除）
+- 简洁明了，每条一行，按重要性排序
+
+示例：
+
+```markdown
+## [v0.0.3] - 2026-04-08
+
+### Added
+- 新增写作格式规范
+
+### Fixed
+- 合并冗余文档
+```
+
+## GitHub Release 规范
+
+- 正式发布使用附注标签：`git tag -a v1.0.0 -m "Release version 1.0.0"`；轻量标签仅用于临时标记
+- GitHub Release 的 Tag Name 与 Git tag 完全一致（CLI 发布由 `release publish` 自动创建）
+- Release Notes 从 CHANGELOG 对应版本章节提取，使用 Added / Changed / Fixed / Removed 分类
+- 最新稳定版本标记 Latest，预发布版本（alpha / beta / rc）标记 Pre-release
+
 ## 发布目标
 
 发布目标由项目契约、scope 配置、CI workflow 和版本计划共同决定，不能只按语言推断。
