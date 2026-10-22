@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [Unreleased]
+
+### Changed
+- 生命周期「开发」阶段名由 `code` 改为 `develop`，与 `quanttide-code`（软件工程）区分：`stage/code.md` 更名为 `stage/develop.md`，生命周期索引、站内链接与 `myst.yml` 目录同步。命令改名 `develop` 单独排期，当前仍为 `code`。
+
 ## [0.3.0] - 2026-09-08
 
 ### Added
